@@ -1,8 +1,12 @@
+import "./Button.css";
 
-export function Button({id, text}){
+export function Button({id, text, action}){
+    const handleAction = (e) => {
+        action(e);
+    }
     return(
-        <div>
-            <button id={id}>{text}</button>
-        </div>
+        <button id={id} onClick={handleAction}>
+            {text}
+        </button> 
     );
 }
